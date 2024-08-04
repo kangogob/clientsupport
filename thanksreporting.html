@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f5f9; /* light blue */
+    text-align: center;
+  }
+  
+  .message {
+    margin-top: 50px;
+  }
+  
+  img {
+    width: 600px; /* Double the original size */
+    display: block;
+    margin: 0 auto; /* Center the image */
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <div class="message">
+    <img src="support.jpeg" alt="Heartwarming Image">
+    <h2>Thank You!</h2>
+    <p>Your issue has been sent to <strong id="technicianName"></strong> and it will be sorted.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const params = new URLSearchParams(window.location.search);
+      const technicianName = params.get('technician');
+      document.getElementById('technicianName').textContent = technicianName;
+    });
+  </script>
+</body>
+</html>
